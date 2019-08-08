@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwinjectStoryboard
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        IQKeyboardManager.shared.enable = true
+
+        let sb = SwinjectStoryboard.create(name: R.storyboard.tabBar.name, bundle: nil)
+        let tabBar = sb.instantiateInitialViewController() as? TabBarController
+        window?.rootViewController = tabBar
         return true
     }
 
@@ -30,7 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        MainService.init().getInflation { (_) in
+        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
