@@ -163,7 +163,7 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: Base, ru
       static let tabBarMainItem = Rswift.StringResource(key: "tabBar.mainItem", tableName: "Localization", bundle: R.hostingBundle, locales: ["Base", "ru"], comment: nil)
-      /// Base translation: Инфляция за %@ составила %.3f%%
+      /// Base translation: Инфляция за %@ составила %.2f%%
       /// 
       /// Locales: Base, ru
       static let calculatorInflation = Rswift.StringResource(key: "calculator.inflation", tableName: "Localization", bundle: R.hostingBundle, locales: ["Base", "ru"], comment: nil)
@@ -221,11 +221,11 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("tabBar.mainItem", tableName: "Localization", bundle: R.hostingBundle, value: "Главная", comment: "")
       }
       
-      /// Base translation: Инфляция за %@ составила %.3f%%
+      /// Base translation: Инфляция за %@ составила %.2f%%
       /// 
       /// Locales: Base, ru
       static func calculatorInflation(_ value1: String, _ value2: Double) -> String {
-        return String(format: NSLocalizedString("calculator.inflation", tableName: "Localization", bundle: R.hostingBundle, value: "Инфляция за %@ составила %.3f%%", comment: ""), locale: R.applicationLocale, value1, value2)
+        return String(format: NSLocalizedString("calculator.inflation", tableName: "Localization", bundle: R.hostingBundle, value: "Инфляция за %@ составила %.2f%%", comment: ""), locale: R.applicationLocale, value1, value2)
       }
       
       /// Base translation: Калькулятор

@@ -120,7 +120,9 @@ extension MainViewController: MainViewProtocol {
     }
     
     func showError() {
-        Alert.showAlert(with: R.string.localization.mainErrorMessage())
+        if presenter.inflations == nil {
+            Alert.showAlert(with: R.string.localization.mainErrorMessage())
+        }
     }
     
     func dataDidLoad() {

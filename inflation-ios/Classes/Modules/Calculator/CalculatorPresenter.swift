@@ -33,20 +33,20 @@ final class CalculatorPresenter: CalculatorViewPresenter {
             return (.zero, .zero)
         }
         if (endPeriod.year - startPeriod.year) > 1 {
-            if let firstIndex = inflations.firstIndex(where: { $0.year == startPeriod.year }),
-                let lastIndex = inflations.firstIndex(where: { $0.year == endPeriod.year }) {
+            if let firstInflationIndex = inflations.firstIndex(where: { $0.year == startPeriod.year }),
+                let lastInflationIndex = inflations.firstIndex(where: { $0.year == endPeriod.year }) {
                 var sum = 0.0
-                let newInflations =  Array(inflations[lastIndex + 1...firstIndex - 1])
+                let newInflations =  Array(inflations[lastInflationIndex + 1...firstInflationIndex - 1])
                 sum = newInflations.reduce(0, { $0 + $1.total })
-                let startMonthIndex = inflations[firstIndex].months.firstIndex(where: { $0.name == startPeriod.month }) ?? 0
-                let endMonthIndex = inflations[lastIndex].months.firstIndex(where: { $0.name == endPeriod.month }) ?? 0
-                let endIndex = inflations[firstIndex].months.endIndex
-                let firstMonths = Array(inflations[firstIndex].months[startMonthIndex...endIndex - 1])
-                let secondMonts = Array(inflations[lastIndex].months[0...endMonthIndex])
+                let startMonthIndex = inflations[firstInflationIndex].months.firstIndex(where: { $0.name == startPeriod.month }) ?? 0
+                let endMonthIndex = inflations[lastInflationIndex].months.firstIndex(where: { $0.name == endPeriod.month }) ?? 0
+                let endIndex = inflations[firstInflationIndex].months.endIndex
+                let firstMonths = Array(inflations[firstInflationIndex].months[startMonthIndex...endIndex - 1])
+                let secondMonts = Array(inflations[lastInflationIndex].months[0...endMonthIndex])
                 let rangeOfMonths = firstMonths + secondMonts
                 sum += rangeOfMonths.reduce(0, { $0 + $1.value })
                 print(sum)
-                return (rangeOfMonths.count, sum)
+                return (rangeOfMonths.count + (newInflations.count * 12), sum)
             }
         } else if startPeriod.year == endPeriod.year {
             guard let inflation = inflations.first(where: {$0.year == startPeriod.year }) else {

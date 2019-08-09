@@ -97,6 +97,7 @@ final class CalculatorViewController: UIViewController {
     
     @IBAction
     private func calculate(_ sender: UIButton) {
+        view.endEditing(true)
         if let startText = startPeriodTextField.text, let endText = endPeriodTextField.text, startText.isEmpty || endText.isEmpty {
             Alert.showAlert(with: R.string.localization.calculatorErrorEmptyField())
             return
