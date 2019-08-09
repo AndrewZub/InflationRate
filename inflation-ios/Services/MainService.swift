@@ -38,8 +38,12 @@ final class MainService {
     
     func getInflation(completion: @escaping GetInflationsCompletion) {
         let url = "https://storage.googleapis.com/ytaxi-testing/inflation.csv"
-        AF.request(url).responseJSON() {
-            response in
+        AF.request(url).responseJSON() { response in
+            guard response.error == nil else {
+                completion(response.error!)
+                return
+            }
+            
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 let csvTest = CSwiftV(with: utf8Text)
                 if let keyedRows = csvTest.keyedRows {
