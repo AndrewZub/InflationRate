@@ -1,0 +1,64 @@
+PODS:
+  - Alamofire (5.0.0-beta.6)
+  - CSwiftV (0.0.9)
+  - IQKeyboardManagerSwift (6.4.0)
+  - MadUtils (0.2.6):
+    - Alamofire (~> 5.0.0-beta.5)
+    - Nuke
+  - Nuke (8.0.1)
+  - ObjectMapper (3.4.2)
+  - R.swift (5.0.3):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.1)
+  - Realm (3.17.1):
+    - Realm/Headers (= 3.17.1)
+  - Realm/Headers (3.17.1)
+  - RealmSwift (3.17.1):
+    - Realm (= 3.17.1)
+  - Swinject (2.6.2)
+  - SwinjectStoryboard (2.2.0):
+    - Swinject (~> 2.6)
+
+DEPENDENCIES:
+  - CSwiftV
+  - IQKeyboardManagerSwift
+  - MadUtils
+  - ObjectMapper (~> 3.4.2)
+  - R.swift
+  - Realm
+  - RealmSwift
+  - Swinject
+  - SwinjectStoryboard
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - CSwiftV
+    - IQKeyboardManagerSwift
+    - MadUtils
+    - Nuke
+    - ObjectMapper
+    - R.swift
+    - R.swift.Library
+    - Realm
+    - RealmSwift
+    - Swinject
+    - SwinjectStoryboard
+
+SPEC CHECKSUMS:
+  Alamofire: cd08a4402bd12cacd0c66f23fb12fec8d6b965e4
+  CSwiftV: 8dde426ad2a4f645bdfb513b8aa878d555aeff60
+  IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
+  MadUtils: c6ec24e16c7abf32d69c496c90bb4b25769b3da2
+  Nuke: e6a65472f59c1bfe779cb495760951f0121ef7c0
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
+  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
+  Realm: c204f1a890f07dea43b14132a6aad118c054b8f2
+  RealmSwift: 4d3c9233544b9cd08a8913e0872b9038eb99b054
+  Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
+  SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
+
+PODFILE CHECKSUM: 439b7005f829b43f4da99ead993526ec99a309d4
+
+COCOAPODS: 1.7.5

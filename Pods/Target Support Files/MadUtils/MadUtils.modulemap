@@ -1,0 +1,6 @@
+framework module MadUtils {
+  umbrella header "MadUtils-umbrella.h"
+
+  export *
+  module * { export * }
+}
