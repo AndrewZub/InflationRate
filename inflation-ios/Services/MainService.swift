@@ -12,7 +12,7 @@ import ObjectMapper
 import RealmSwift
 
 typealias InflationsUpdated = () -> Void
-typealias GetInflationCompletion = (_ error: Error?) -> Void
+typealias GetInflationsCompletion = (_ error: Error?) -> Void
 
 final class MainService {
     
@@ -36,7 +36,7 @@ final class MainService {
         })
     }
     
-    func getInflation(completion: @escaping GetInflationCompletion) {
+    func getInflation(completion: @escaping GetInflationsCompletion) {
         let url = "https://storage.googleapis.com/ytaxi-testing/inflation.csv"
         AF.request(url).responseJSON() {
             response in

@@ -112,6 +112,7 @@ final class CalculatorViewController: UIViewController {
         }
     }
 }
+
 // MARK: - UIPickerViewDelegate'n'UIPickerViewDataSource
 extension CalculatorViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -17,7 +17,6 @@ final class RealmFactory {
             schemaVersion: schemaVersion,
             migrationBlock: { _, _ in
         })
-        // swiftlint:disable force_try
         let realm = try! Realm(configuration: config)
         return realm
     }
