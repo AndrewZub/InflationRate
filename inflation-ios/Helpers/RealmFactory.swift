@@ -9,7 +9,7 @@
 import RealmSwift
 
 final class RealmFactory {
-    static private let schemaVersion: UInt64 = 5
+    static private let schemaVersion: UInt64 = 6
     
     static func getRealm() -> Realm {
         let schemaVersion = RealmFactory.schemaVersion
